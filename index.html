@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mug House Adega • Controle de Estoque</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">★</div>
+          <div>
+            <p class="eyebrow">MUG HOUSE ADEGA</p>
+            <h1>Controle de estoque e reposição automática</h1>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <button class="nav-btn active" data-view="home">Início</button>
+          <button class="nav-btn" data-view="products">Produtos</button>
+          <button class="nav-btn" data-view="my-products">Meus produtos</button>
+          <button class="nav-btn" data-view="reports">Relatórios</button>
+          <button class="nav-btn" data-view="json">Banco JSON</button>
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="view active">
+          <section class="hero card-gradient">
+            <div class="hero-copy">
+              <p class="eyebrow">Projeto acadêmico aplicado ao varejo</p>
+              <h2 id="project-title">Aplicação Web para Controle de Estoque e Reposição Automática</h2>
+              <p id="project-summary"></p>
+              <div class="hero-actions">
+                <button class="primary-btn" data-go="products">Ver catálogo</button>
+                <button class="ghost-btn" data-go="json">Abrir banco JSON</button>
+              </div>
+              <div class="hero-metrics" id="hero-metrics"></div>
+            </div>
+            <div class="hero-visual">
+              <img src="assets/catalogo.png" alt="Tela principal do catálogo de produtos" />
+            </div>
+          </section>
+
+          <section class="home-grid">
+            <article class="glass-card">
+              <h3>Problema</h3>
+              <p id="problem-text"></p>
+            </article>
+            <article class="glass-card">
+              <h3>Justificativa</h3>
+              <p id="justification-text"></p>
+            </article>
+            <article class="glass-card span-2">
+              <h3>Objetivo geral</h3>
+              <p id="general-objective"></p>
+            </article>
+          </section>
+
+          <section class="content-section two-col">
+            <div class="content-card">
+              <h3>Objetivos específicos</h3>
+              <ul id="specific-objectives" class="check-list"></ul>
+            </div>
+            <div class="content-card">
+              <h3>Benefícios esperados</h3>
+              <ul id="benefits-list" class="check-list"></ul>
+            </div>
+          </section>
+
+          <section class="showcase-section">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Interface inspirada nas imagens enviadas</p>
+                <h3>Prévia visual das telas</h3>
+              </div>
+            </div>
+            <div class="showcase-grid" id="showcase-grid"></div>
+          </section>
+
+          <section class="content-section two-col">
+            <div class="content-card">
+              <h3>Requisitos funcionais</h3>
+              <ul id="functional-requirements" class="requirements-list"></ul>
+            </div>
+            <div class="content-card">
+              <h3>Requisitos não funcionais</h3>
+              <ul id="non-functional-requirements" class="requirements-list"></ul>
+            </div>
+          </section>
+
+          <section class="content-section two-col">
+            <div class="content-card">
+              <h3>Tecnologias do projeto</h3>
+              <div id="tech-stack" class="tech-grid"></div>
+            </div>
+            <div class="content-card">
+              <h3>Oficina com agente externo</h3>
+              <p id="workshop-context"></p>
+              <h4>Funcionalidades validadas</h4>
+              <ul id="workshop-validated" class="check-list compact"></ul>
+              <h4>Melhorias sugeridas</h4>
+              <ul id="workshop-feedbacks" class="check-list compact"></ul>
+              <div class="note-box" id="workshop-conclusion"></div>
+            </div>
+          </section>
+
+          <section class="content-card references-card">
+            <h3>Referências bibliográficas citadas no documento</h3>
+            <ol id="references-list"></ol>
+          </section>
+        </section>
+
+        <section id="products" class="view app-layout">
+          <aside class="sidebar-panel">
+            <div class="sidebar-actions">
+              <button class="success-btn" id="open-create-from-sidebar">+ Adicionar</button>
+              <button class="danger-outline-btn" id="clear-filters">Remover filtros</button>
+            </div>
+
+            <div class="sidebar-block">
+              <h3>Performance</h3>
+              <p class="muted">Produtos com mais vendas nos últimos 30 dias</p>
+              <div id="performance-list" class="performance-list"></div>
+            </div>
+
+            <div class="sidebar-block">
+              <h3>Palavra-chave</h3>
+              <input type="search" id="keyword-filter" placeholder="Nenhuma" />
+            </div>
+
+            <div class="sidebar-block">
+              <div class="filter-head">
+                <h3>Preço</h3>
+                <span id="price-filter-value">R$ 0 — R$ 200</span>
+              </div>
+              <input type="range" min="20" max="200" step="5" value="200" id="price-range" />
+            </div>
+
+            <div class="sidebar-block">
+              <h3>Situação</h3>
+              <label><input type="checkbox" value="em_estoque" class="status-filter" /> Em estoque</label>
+              <label><input type="checkbox" value="esgotado" class="status-filter" /> Esgotado</label>
+              <label><input type="checkbox" value="repor" class="status-filter" /> Pedido feito</label>
+            </div>
+
+            <div class="sidebar-block">
+              <h3>Tamanho</h3>
+              <label><input type="checkbox" value="350ml" class="size-filter" /> 350ml</label>
+              <label><input type="checkbox" value="700ml" class="size-filter" /> 700ml</label>
+              <label><input type="checkbox" value="750ml" class="size-filter" /> 750ml</label>
+              <label><input type="checkbox" value="1L" class="size-filter" /> 1L</label>
+            </div>
+          </aside>
+
+          <div class="catalog-panel">
+            <div class="catalog-toolbar">
+              <input type="search" id="catalog-search" placeholder="Buscar..." />
+              <div class="chip-row">
+                <button class="chip active" data-sort="featured">Novos</button>
+                <button class="chip" data-sort="priceAsc">Preço ↑</button>
+                <button class="chip" data-sort="priceDesc">Preço ↓</button>
+                <button class="chip" data-sort="rating">Avaliação</button>
+              </div>
+            </div>
+            <div id="catalog-grid" class="catalog-grid"></div>
+          </div>
+        </section>
+
+        <section id="my-products" class="view managed-view">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Gestão do catálogo</p>
+              <h2>Meus produtos</h2>
+            </div>
+            <button class="primary-btn" id="open-create-product">+ Novo produto</button>
+          </div>
+          <div id="managed-grid" class="managed-grid"></div>
+        </section>
+
+        <section id="reports" class="view reports-view">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Visão analítica</p>
+              <h2>Relatórios</h2>
+            </div>
+          </div>
+
+          <div id="kpi-grid" class="kpi-grid"></div>
+
+          <div class="reports-grid">
+            <article class="content-card">
+              <h3>Mais vendidos</h3>
+              <div id="bar-chart" class="bar-chart"></div>
+            </article>
+            <article class="content-card">
+              <h3>Distribuição por categoria</h3>
+              <div class="donut-wrap">
+                <div id="donut-chart" class="donut-chart"></div>
+                <div id="donut-legend" class="donut-legend"></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="reports-grid lower-grid">
+            <article class="content-card">
+              <h3>Alertas de reposição</h3>
+              <div id="reorder-alerts" class="alert-list"></div>
+            </article>
+            <article class="content-card">
+              <h3>Movimentações recentes</h3>
+              <div id="transactions-list" class="timeline"></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="json" class="view json-view">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Estrutura de dados</p>
+              <h2>Banco de dados em JSON</h2>
+            </div>
+            <button class="primary-btn" id="download-json">Baixar db.json</button>
+          </div>
+          <div class="content-card">
+            <p class="muted">O arquivo abaixo concentra produtos, requisitos, tecnologias, referências, KPIs e movimentações. Alterações feitas na interface são refletidas nesta visualização.</p>
+            <pre id="json-output" class="json-output"></pre>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="product-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-card">
+        <button class="modal-close" data-close-modal>×</button>
+        <h3 id="modal-title">Novo produto</h3>
+        <form id="product-form" class="product-form">
+          <input type="hidden" id="product-id" />
+          <label>
+            <span>Nome *</span>
+            <input type="text" id="form-name" placeholder="Nome do produto" required />
+          </label>
+          <div class="form-row two">
+            <label>
+              <span>Preço de custo *</span>
+              <input type="number" step="0.01" min="0" id="form-cost" placeholder="0,00" required />
+            </label>
+            <label>
+              <span>Preço de venda *</span>
+              <input type="number" step="0.01" min="0" id="form-price" placeholder="0,00" required />
+            </label>
+          </div>
+          <div class="form-row two">
+            <label>
+              <span>Quantidade</span>
+              <input type="number" min="0" id="form-quantity" value="0" />
+            </label>
+            <label>
+              <span>Nível de reposição</span>
+              <input type="number" min="0" id="form-reorder" value="3" />
+            </label>
+          </div>
+          <div class="form-row two">
+            <label>
+              <span>Categoria</span>
+              <select id="form-category">
+                <option>Vodka</option>
+                <option>Licor</option>
+                <option>Whisky</option>
+                <option>Gin</option>
+                <option>Cerveja</option>
+                <option>Vinho</option>
+                <option>Rum</option>
+                <option>Tequila</option>
+              </select>
+            </label>
+            <label>
+              <span>Tamanho</span>
+              <select id="form-size">
+                <option>350ml</option>
+                <option>700ml</option>
+                <option>750ml</option>
+                <option>1L</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row two">
+            <label>
+              <span>Teor alcoólico</span>
+              <input type="text" id="form-abv" placeholder="ex: 38%" />
+            </label>
+            <label>
+              <span>Status</span>
+              <select id="form-status">
+                <option value="em_estoque">Em estoque</option>
+                <option value="esgotado">Esgotado</option>
+                <option value="repor">Pedido feito</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            <span>Descrição</span>
+            <textarea id="form-description" rows="4" placeholder="Descrição do produto"></textarea>
+          </label>
+          <button class="primary-btn full" type="submit">Salvar produto</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="detail-drawer" class="drawer hidden" aria-hidden="true">
+      <div class="drawer-backdrop" data-close-drawer></div>
+      <div class="drawer-card">
+        <button class="drawer-close" data-close-drawer>×</button>
+        <div id="detail-content"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,304 @@
+{
+  "project": {
+    "title": "Aplicação Web para Controle de Estoque e Reposição Automática",
+    "subtitle": "Protótipo inspirado no trabalho acadêmico da PUC Minas para micro e pequenas empresas varejistas",
+    "institution": "Pontifícia Universidade Católica de Minas Gerais (PUC Minas)",
+    "course": "Sistemas de Informação",
+    "location": "Betim/MG",
+    "year": 2026,
+    "summary": "Solução web para substituir controles manuais de estoque por uma interface simples, responsiva e com atualização automática após entradas e saídas.",
+    "problem": "Em adegas e pequenos varejos, o controle manual por planilhas e cadernos gera vendas de itens esgotados, divergências entre estoque físico e registrado, perdas por baixa rastreabilidade e dificuldade para repor produtos com maior giro.",
+    "justification": "Micro e pequenas empresas possuem papel central na economia brasileira, mas ainda enfrentam limitações na gestão operacional. A proposta oferece uma solução acessível para melhorar organização, reduzir perdas e apoiar decisões estratégicas.",
+    "generalObjective": "Desenvolver e implementar uma aplicação web voltada ao gerenciamento de estoque e automação de reposição para micro e pequenas empresas varejistas.",
+    "specificObjectives": [
+      "Levantar requisitos funcionais e não funcionais do sistema.",
+      "Analisar dificuldades das micro e pequenas empresas no controle de estoque.",
+      "Desenvolver uma aplicação web para controle de entrada e saída de produtos.",
+      "Implementar cadastro, edição e exclusão de produtos.",
+      "Realizar testes para validar funcionamento e usabilidade.",
+      "Avaliar resultados em comparação ao controle manual.",
+      "Propor melhorias com base nos feedbacks dos usuários."
+    ],
+    "benefits": [
+      "Redução de erros operacionais e desperdícios.",
+      "Melhor organização do estoque físico e digital.",
+      "Apoio à tomada de decisões estratégicas.",
+      "Diminuição de perdas financeiras.",
+      "Maior visibilidade sobre produtos com maior saída.",
+      "Base para reposição automática e alertas de estoque baixo."
+    ],
+    "workshop": {
+      "context": "A oficina foi realizada em reunião online para apresentar o protótipo e validar a proposta com um agente externo.",
+      "validatedFeatures": [
+        "Cadastro de produtos com múltiplos atributos.",
+        "Edição de itens cadastrados.",
+        "Controle de status de estoque.",
+        "Simulação de entradas e saídas de mercadorias.",
+        "Navegação entre telas web e mobile."
+      ],
+      "feedbacks": [
+        "Inclusão de cálculo de margem de lucro.",
+        "Criação de relatórios de entrada e saída de produtos.",
+        "Ampliação do acompanhamento analítico para tomada de decisão."
+      ],
+      "conclusion": "A validação inicial foi considerada bem-sucedida e alinhada às demandas reais do mercado varejista."
+    }
+  },
+  "requirements": {
+    "functional": [
+      { "id": "RF01", "description": "Permitir cadastrar produtos." },
+      { "id": "RF02", "description": "Permitir editar produtos cadastrados." },
+      { "id": "RF03", "description": "Permitir excluir produtos." },
+      { "id": "RF04", "description": "Permitir visualizar lista de produtos em estoque." },
+      { "id": "RF05", "description": "Permitir registrar entrada de produtos no estoque." },
+      { "id": "RF06", "description": "Permitir registrar saída de produtos (vendas)." },
+      { "id": "RF07", "description": "Atualizar automaticamente a quantidade em estoque após movimentações." },
+      { "id": "RF08", "description": "Permitir informar preço de custo e preço de venda dos produtos." }
+    ],
+    "nonFunctional": [
+      { "id": "RNF01", "description": "Interface simples e intuitiva, adequada para usuários leigos." },
+      { "id": "RNF02", "description": "Sistema responsivo para celular e computador." },
+      { "id": "RNF03", "description": "Responder às requisições em até 2 segundos." },
+      { "id": "RNF04", "description": "Suportar múltiplos acessos simultâneos." },
+      { "id": "RNF05", "description": "Disponibilidade 24/7, exceto manutenções programadas." },
+      { "id": "RNF06", "description": "Funcionar nos principais navegadores, como Chrome e Edge." }
+    ]
+  },
+  "techStack": [
+    {
+      "name": "JavaScript",
+      "role": "Base da aplicação",
+      "description": "Linguagem dinâmica usada para estruturar a interface e integrar serviços externos."
+    },
+    {
+      "name": "TypeScript",
+      "role": "Tipagem estática",
+      "description": "Adiciona confiabilidade ao código, reduzindo erros em tempo de execução."
+    },
+    {
+      "name": "Node.js",
+      "role": "Ambiente de desenvolvimento",
+      "description": "Suporta ferramentas como Vite e o gerenciamento de dependências via npm."
+    },
+    {
+      "name": "React",
+      "role": "Frontend baseado em componentes",
+      "description": "Biblioteca escolhida para interfaces reutilizáveis e atualização rápida da tela conforme o estado do estoque."
+    },
+    {
+      "name": "Firebase",
+      "role": "Backend as a Service",
+      "description": "Centraliza serviços como autenticação, hospedagem e integração do backend."
+    },
+    {
+      "name": "Cloud Firestore",
+      "role": "Banco de dados NoSQL",
+      "description": "Permite sincronização em tempo real com estrutura flexível semelhante a JSON."
+    }
+  ],
+  "references": [
+    "ARNOLD, J. R. Tony. Administração de materiais: uma introdução. São Paulo: Atlas, 2012.",
+    "BANKS, Alex; PORCELLO, Eve. Learning React: modern patterns for developing React apps. 2. ed. Sebastopol: O'Reilly Media, 2020.",
+    "CHERNY, Boris. Programming TypeScript: making your JavaScript applications scale. Sebastopol: O'Reilly Media, 2019.",
+    "FLANAGAN, David. JavaScript: the definitive guide. 7. ed. Sebastopol: O'Reilly Media, 2020.",
+    "GOOGLE. Firebase documentation. 2024.",
+    "LAUDON, Kenneth C.; LAUDON, Jane P. Sistemas de informação gerenciais. 16. ed. São Paulo: Pearson, 2020.",
+    "NODE.JS. Node.js documentation. 2024.",
+    "SADALAGE, Pramod J.; FOWLER, Martin. NoSQL distilled: a brief guide to the emerging world of polyglot persistence. Boston: Addison-Wesley, 2012.",
+    "SLACK, Nigel et al. Administração da produção. São Paulo: Atlas, 2018.",
+    "VELOSO, Thamiris Diniz; FONSECA, Cassio Fernandes da. Controle e gestão de estoques: estudo de caso em uma microempresa. Revista Latino-Americana de Inovação e Engenharia de Produção, v. 6, n. 9, 2018."
+  ],
+  "screenshots": [
+    { "title": "Catálogo principal", "file": "assets/catalogo.png" },
+    { "title": "Meus produtos", "file": "assets/meus-produtos.png" },
+    { "title": "Modal novo produto", "file": "assets/novo-produto-modal.png" },
+    { "title": "Detalhe do produto", "file": "assets/produto-detalhe.png" },
+    { "title": "Relatórios", "file": "assets/relatorios.png" }
+  ],
+  "products": [
+    {
+      "id": "p001",
+      "name": "Licor Amarula 700ml",
+      "slug": "licor-amarula-700ml",
+      "category": "Licor",
+      "size": "700ml",
+      "abv": "17%",
+      "priceCost": 54.9,
+      "priceSale": 79.9,
+      "quantity": 18,
+      "status": "em_estoque",
+      "reorderLevel": 6,
+      "image": "assets/meus-produtos.png",
+      "thumbFocus": "amarula",
+      "description": "Licor cremoso sul-africano feito com fruta marula e creme fresco.",
+      "sales30d": 50,
+      "rating": 4.6,
+      "featured": true
+    },
+    {
+      "id": "p002",
+      "name": "Vodka Absolut 1L",
+      "slug": "vodka-absolut-1l",
+      "category": "Vodka",
+      "size": "1L",
+      "abv": "40%",
+      "priceCost": 61.9,
+      "priceSale": 79.9,
+      "quantity": 14,
+      "status": "em_estoque",
+      "reorderLevel": 5,
+      "image": "assets/produto-detalhe.png",
+      "thumbFocus": "absolut",
+      "description": "Vodka sueca premium, destilada a partir de trigo de inverno. Pura e versátil.",
+      "sales30d": 120,
+      "rating": 4.9,
+      "featured": true
+    },
+    {
+      "id": "p003",
+      "name": "Vodka Orloff 1L",
+      "slug": "vodka-orloff-1l",
+      "category": "Vodka",
+      "size": "1L",
+      "abv": "37,5%",
+      "priceCost": 19.8,
+      "priceSale": 26,
+      "quantity": 34,
+      "status": "em_estoque",
+      "reorderLevel": 10,
+      "image": "assets/catalogo.png",
+      "thumbFocus": "orloff",
+      "description": "A Vodka Orloff 1000 ml é uma expressão nacional que combina tradição e acessibilidade. Ideal para coquetéis e doses geladas.",
+      "sales30d": 340,
+      "rating": 4.4,
+      "featured": true
+    },
+    {
+      "id": "p004",
+      "name": "Whisky Jack 1L",
+      "slug": "whisky-jack-1l",
+      "category": "Whisky",
+      "size": "1L",
+      "abv": "40%",
+      "priceCost": 118.5,
+      "priceSale": 149.9,
+      "quantity": 9,
+      "status": "em_estoque",
+      "reorderLevel": 4,
+      "image": "assets/catalogo.png",
+      "thumbFocus": "jack",
+      "description": "Whisky de perfil clássico, com notas amadeiradas e final marcante para consumo puro ou com gelo.",
+      "sales30d": 95,
+      "rating": 4.8,
+      "featured": false
+    },
+    {
+      "id": "p005",
+      "name": "Gin Tanqueray 750ml",
+      "slug": "gin-tanqueray-750ml",
+      "category": "Gin",
+      "size": "750ml",
+      "abv": "47,3%",
+      "priceCost": 86.9,
+      "priceSale": 109.9,
+      "quantity": 11,
+      "status": "em_estoque",
+      "reorderLevel": 4,
+      "image": "assets/catalogo.png",
+      "thumbFocus": "tanqueray",
+      "description": "Gin premium de perfil cítrico e herbal, indicado para drinks clássicos e autorais.",
+      "sales30d": 60,
+      "rating": 4.7,
+      "featured": false
+    },
+    {
+      "id": "p006",
+      "name": "Cerveja Heineken 350ml",
+      "slug": "cerveja-heineken-350ml",
+      "category": "Cerveja",
+      "size": "350ml",
+      "abv": "5%",
+      "priceCost": 6.1,
+      "priceSale": 9.9,
+      "quantity": 96,
+      "status": "em_estoque",
+      "reorderLevel": 24,
+      "image": "assets/catalogo.png",
+      "thumbFocus": "heineken",
+      "description": "Lager premium refrescante, com amargor equilibrado e alta rotatividade em pequenos varejos.",
+      "sales30d": 55,
+      "rating": 4.5,
+      "featured": false
+    },
+    {
+      "id": "p007",
+      "name": "Vinho Casillero 750ml",
+      "slug": "vinho-casillero-750ml",
+      "category": "Vinho",
+      "size": "750ml",
+      "abv": "13%",
+      "priceCost": 42.5,
+      "priceSale": 59.9,
+      "quantity": 13,
+      "status": "em_estoque",
+      "reorderLevel": 5,
+      "image": "assets/catalogo.png",
+      "thumbFocus": "vinho",
+      "description": "Vinho com boa aceitação no varejo, ideal para compor mix de vendas e kits promocionais.",
+      "sales30d": 85,
+      "rating": 4.3,
+      "featured": false
+    },
+    {
+      "id": "p008",
+      "name": "Rum Bacardi 1L",
+      "slug": "rum-bacardi-1l",
+      "category": "Rum",
+      "size": "1L",
+      "abv": "38%",
+      "priceCost": 68.9,
+      "priceSale": 89.9,
+      "quantity": 0,
+      "status": "esgotado",
+      "reorderLevel": 4,
+      "image": "assets/catalogo.png",
+      "thumbFocus": "rum",
+      "description": "Rum leve e versátil para coquetelaria, atualmente marcado como esgotado para reposição prioritária.",
+      "sales30d": 30,
+      "rating": 4.1,
+      "featured": false
+    },
+    {
+      "id": "p009",
+      "name": "Tequila Jose Cuervo 750ml",
+      "slug": "tequila-jose-cuervo-750ml",
+      "category": "Tequila",
+      "size": "750ml",
+      "abv": "38%",
+      "priceCost": 119.9,
+      "priceSale": 149.9,
+      "quantity": 8,
+      "status": "em_estoque",
+      "reorderLevel": 3,
+      "image": "assets/catalogo.png",
+      "thumbFocus": "tequila",
+      "description": "Tequila para shots e drinks, item de ticket médio maior e controle de giro estratégico.",
+      "sales30d": 30,
+      "rating": 4.2,
+      "featured": false
+    }
+  ],
+  "transactions": [
+    { "id": "t001", "type": "entrada", "productId": "p002", "quantity": 6, "date": "2026-05-21", "notes": "Reposição de lote" },
+    { "id": "t002", "type": "saida", "productId": "p003", "quantity": 24, "date": "2026-05-22", "notes": "Venda balcão" },
+    { "id": "t003", "type": "saida", "productId": "p004", "quantity": 5, "date": "2026-05-24", "notes": "Combo promocional" },
+    { "id": "t004", "type": "entrada", "productId": "p006", "quantity": 48, "date": "2026-05-27", "notes": "Reposição semanal" },
+    { "id": "t005", "type": "saida", "productId": "p001", "quantity": 8, "date": "2026-05-29", "notes": "Venda delivery" }
+  ],
+  "kpis": {
+    "totalProducts": 9,
+    "stockValue": 12607,
+    "outOfStock": 1,
+    "sales30d": 865
+  }
+}
